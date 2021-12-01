@@ -1,0 +1,7 @@
+# npm install -g @nestjs/cli
+
+# npx @nestjs/cli new project-management-api
+
+# npm run start:dev ... roda na porta localhost:3000 | fica em mod live server
+
+tudo de typescript é compilado para JS na pasta 'dist'
