@@ -1,7 +1,15 @@
-# npm install -g @nestjs/cli
+# npm install -g @nestjs/cli  ... nestjs-cli local
 
 # npx @nestjs/cli new project-management-api
 
 # npm run start:dev ... roda na porta localhost:3000 | fica em mod live server
 
 tudo de typescript é compilado para JS na pasta 'dist'
+
+# nest g controller recursos 
+
+# nest g resource ... gera a estrutura básica de api (dto, service, entity, controller)
+
+# npm install --save sequelize sequelize-typescript mysql2
+
+# npm install --save-dev @types/sequelize ... sequelize tipo TS 

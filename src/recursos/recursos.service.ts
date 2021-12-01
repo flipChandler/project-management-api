@@ -8,6 +8,7 @@ export class RecursosService {
     return 'This action adds a new recurso';
   }
 
+  // feature: consulta de recursos
   findAll() {
     return `This action returns all recursos`;
   }
