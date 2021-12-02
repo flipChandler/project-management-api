@@ -1,3 +1,15 @@
+## COMANDOS INICIAIS
+
+# no MYSQL
+- CREATE DATABASE project_db;
+
+# dentro da pasta project-management-api
+- npm install (linha de comando)
+- no arquivo 'app.module.ts', alterar o 'username' e 'password' conforme a configuração do seu banco local
+- npm run start:dev (linha de comando)
+- no arquivo 'ap.http', clicar em 'Send Request' para realizar as requisições nos endpoints da API
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -71,3 +83,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+

@@ -13,3 +13,5 @@ tudo de typescript é compilado para JS na pasta 'dist'
 # npm install --save sequelize sequelize-typescript mysql2
 
 # npm install --save-dev @types/sequelize ... sequelize tipo TS 
+
+# npm install @nestjs/sequelize
