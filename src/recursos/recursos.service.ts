@@ -1,27 +1,37 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
 import { CreateRecursoDto } from './dto/create-recurso.dto';
 import { UpdateRecursoDto } from './dto/update-recurso.dto';
+import { Recurso } from './entities/recurso.entity';
 
 @Injectable()
 export class RecursosService {
+
+  constructor(@InjectModel(Recurso) private recursoModel: typeof Recurso) {
+    
+  }
+
   create(createRecursoDto: CreateRecursoDto) {
-    return 'This action adds a new recurso';
+    return this.recursoModel.create(createRecursoDto);
   }
 
   // feature: consulta de recursos
   findAll() {
-    return `This action returns all recursos`;
+    return this.recursoModel.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} recurso`;
+  findByPk(id: string) {
+    return this.recursoModel.findByPk(id);
   }
 
-  update(id: number, updateRecursoDto: UpdateRecursoDto) {
-    return `This action updates a #${id} recurso`;
+  async update(id: string, updateRecursoDto: UpdateRecursoDto) {
+    const recurso = await this.recursoModel.findByPk(id);
+    return recurso.update(updateRecursoDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} recurso`;
+  async remove(id: string) {
+    const recurso = this.recursoModel.findByPk(id);
+    (await recurso).destroy();
   }
 }

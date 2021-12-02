@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode } from '@nestjs/common';
 import { RecursosService } from './recursos.service';
 import { CreateRecursoDto } from './dto/create-recurso.dto';
 import { UpdateRecursoDto } from './dto/update-recurso.dto';
@@ -18,17 +18,18 @@ export class RecursosController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.recursosService.findOne(+id);
+  findByPk(@Param('id') id: string) {
+    return this.recursosService.findByPk(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRecursoDto: UpdateRecursoDto) {
-    return this.recursosService.update(+id, updateRecursoDto);
+    return this.recursosService.update(id, updateRecursoDto);
   }
 
+  @HttpCode(204)
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.recursosService.remove(+id);
+    return this.recursosService.remove(id);
   }
 }
